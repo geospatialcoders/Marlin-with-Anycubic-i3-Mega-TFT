@@ -74,7 +74,7 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(derhopp, Anycubic i3 Mega)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(fines, Anycubic i3 Mega -Custom)" // Who made the changes.
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
@@ -373,9 +373,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // i3 Mega
-  #define  DEFAULT_Kp 22.2
-  #define  DEFAULT_Ki 3.5
-  #define  DEFAULT_Kd 154
+  #define  DEFAULT_Kp 29.02
+  #define  DEFAULT_Ki 2.60
+  #define  DEFAULT_Kd 82.82
 
   // Ultimaker
   //#define  DEFAULT_Kp 22.2
@@ -603,7 +603,10 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 92.6 }
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 92.6 }
+
+//SLF: Changer for Titan Aero
+#define DEFAULT_AXIS_STEPS_PER_UNIT {80, 80, 400, 837}
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -653,7 +656,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -690,7 +693,8 @@
  * disastrous consequences. Use with caution and do your homework.
  *
  */
-#define Z_MIN_PROBE_ENDSTOP
+//SLF
+//#define Z_MIN_PROBE_ENDSTOP
 
 /**
  * Probe Type
@@ -711,7 +715,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-#define FIX_MOUNTED_PROBE
+//#define FIX_MOUNTED_PROBE
 
 /**
  * Z Servo Probe, such as an endstop switch on a rotating arm.
@@ -850,7 +854,8 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+//SLF: Changed for Titan AERO
+#define INVERT_E0_DIR true
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -970,15 +975,15 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR
-//#define AUTO_BED_LEVELING_UBL
+//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
 /**
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1139,7 +1144,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).

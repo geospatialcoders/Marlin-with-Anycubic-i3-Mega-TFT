@@ -1,0 +1,5 @@
+READ:  Kp: 29.02 Ki: 2.60 Kd: 80.82
+READ: PID Autotune finished! Put the last Kp, Ki and Kd constants from below into Configuration.h
+READ: #define DEFAULT_Kp 29.02
+READ: #define DEFAULT_Ki 2.60
+READ: #define DEFAULT_Kd 80.82
