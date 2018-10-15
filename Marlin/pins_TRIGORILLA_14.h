@@ -34,10 +34,18 @@
 #define FAN_PIN 9
 
 // FAN1 / D7  - Typically unused, can be allocated as Case Fan
+#define CONTROLLER_FAN_PIN 7
 
 // FAN2 / D44 - Typical Extruder Fan on Anycubic Delta devices
 #define FAN2_PIN              44
 #define ORIG_E0_AUTO_FAN_PIN  44
+
+#define BUZZER 			   31
+#define SDPOWER            -1
+#define SDSS               53
+#define LED_PIN            13
+#define Z_MIN_PROBE_PIN     2
+#define FIL_RUNOUT_PIN	   19
 
 #include "pins_RAMPS.h"
 
@@ -47,6 +55,10 @@
 #undef E1_DIR_PIN
 #undef E1_ENABLE_PIN
 #undef E1_CS_PIN
+
+#define Z2_STEP_PIN        36
+#define Z2_DIR_PIN         34
+#define Z2_ENABLE_PIN      30
 
 //
 // AnyCubic made the following changes to 1.1.0-RC8
